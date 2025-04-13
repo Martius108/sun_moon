@@ -9,9 +9,17 @@ import SwiftUI
 
 @main
 struct Sun_MoonApp: App {
+    
+    @State private var locationManager = LocationManager()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            if locationManager.isAuthorized {
+                ForecastView()
+            } else {
+                LocationDeniedView()
+            }
         }
+        .environment(locationManager)
     }
 }
