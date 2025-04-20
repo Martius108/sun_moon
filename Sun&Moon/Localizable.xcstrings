@@ -238,13 +238,13 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Quellenangabe konnte nicht geladen werden."
+            "value" : "Verbindung verloren…"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Attribution could not be loaded."
+            "value" : "Connection lost…"
           }
         }
       }
@@ -625,23 +625,6 @@
         }
       }
     },
-    "Get your Zodiac Sign:" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Zeige dein Sternzeichen an:"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Get your Zodiac Sign:"
-          }
-        }
-      }
-    },
     "Get Your Zodiac Sign:" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -660,7 +643,20 @@
       }
     },
     "Get your Zodiac Sign: " : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Zeige dein Sternzeichen an:"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Get your Zodiac Sign:"
+          }
+        }
+      }
     },
     "Goat 🐐" : {
       "localizations" : {
@@ -1226,7 +1222,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Bitte gib deine Geburtsdaten ein"
+            "value" : "Bitte gebe deine Geburtsdaten ein"
           }
         },
         "en" : {

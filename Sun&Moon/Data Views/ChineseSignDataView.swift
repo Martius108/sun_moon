@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// View holding chinese zodiac sign data for content view
 struct ChineseSignDataView: View {
     
     let birthDates: [BirthDate]

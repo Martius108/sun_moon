@@ -8,6 +8,7 @@
 import SwiftUI
 import WeatherKit
 
+// View holding weather data for content view
 struct CurrentWeatherDataView: View {
     
     let weatherManager = WeatherManager.shared

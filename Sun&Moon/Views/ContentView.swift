@@ -10,17 +10,18 @@ import WeatherKit
 import CoreLocation
 import SwiftData
 
+// Initial View holding all data
 struct ContentView: View {
     
-    // prepare for SwiftData
+    // Prepare for SwiftData
     @Query var birthDates: [BirthDate]
     @State private var showEditView = false
     
-    // set up the location and the weather manager
+    // Set up the location and the weather manager
     @EnvironmentObject var locationManager: LocationManager
     let weatherManager = WeatherManager.shared
     
-    // current weather, current location and current timezone
+    // Set up and monitor all weather, location and timezone data
     @State private var currentWeather: CurrentWeather?
     @State private var dailyForecast: Forecast<DayWeather>?
     @State private var timezone: TimeZone = .current
@@ -28,16 +29,16 @@ struct ContentView: View {
     var currentLocation: CLLocation {
         locationManager.userLocation ?? fallbackLocation
     }
-    // check if weather is still loading
+    // Check if weather is still loading
     @State private var isLoading = false
     @State private var cityName: String?
     
-    // declare and monitor sun values
+    // Declare and monitor sun values
     @State private var sunrise: Date?
     @State private var sunset: Date?
     @State private var solarNoon: Date?
     
-    // declare and monitor moon values
+    // Declare and monitor moon values
     @State private var currentMoonPhase: String?
     @State private var moonrise: Date?
     @State private var moonset: Date?

@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// View holding sun data for content view
 struct SunDataView: View {
     
     let timezone: TimeZone

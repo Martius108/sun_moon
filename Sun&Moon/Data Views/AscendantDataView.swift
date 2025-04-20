@@ -9,6 +9,7 @@ import SwiftUI
 import WeatherKit
 import CoreLocation
 
+// View holding ascendant data for content view
 struct AscendantDataView: View {
     
     let weatherManager = WeatherManager.shared

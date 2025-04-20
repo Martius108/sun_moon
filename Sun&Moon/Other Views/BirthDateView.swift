@@ -8,6 +8,7 @@
 import SwiftUI
 import SwiftData
 
+// This View enables the input of users birth and location data
 struct BirthDateView: View {
 
     // Environment for accessing the data model context.
@@ -116,7 +117,6 @@ struct BirthDateView: View {
                             }
                         )
                         .padding(.bottom, 10)
-
 
                     DatePicker("Birth Date", selection: $date, displayedComponents: .date)
                     DatePicker("Birth Time", selection: $time, displayedComponents: .hourAndMinute)

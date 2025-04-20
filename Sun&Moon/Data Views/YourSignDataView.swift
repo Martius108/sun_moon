@@ -9,6 +9,7 @@ import SwiftUI
 import SwiftData
 import CoreLocation
 
+// View holding users zodiac sign data for content view
 struct YourSignDataView: View {
     
     let birthDate: BirthDate

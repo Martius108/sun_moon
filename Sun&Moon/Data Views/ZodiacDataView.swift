@@ -8,6 +8,7 @@
 import SwiftUI
 import WeatherKit
 
+// View holding current zodiac sign data for content view
 struct ZodiacDataView: View {
     
     let weatherManager = WeatherManager.shared

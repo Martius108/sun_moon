@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// This View is called when Location Services are not allowed (yet).
 struct LocationDeniedView: View {
     
     public var body: some View {

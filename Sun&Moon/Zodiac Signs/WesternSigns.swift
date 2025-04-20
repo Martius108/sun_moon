@@ -15,7 +15,7 @@ class WesternSigns {
     var month: Int = 0
     var symbol: String = ""
     
-    // create name, element and symbol for the zodiac signs from date
+    // Creates name, element and symbol for the zodiac signs from date
     func getName(day: Int, month: Int) -> (name: String, element: String, symbol: String) {
         
         if (month == 1 && day <= 20) { // Capricorn 22.12.-20.1.

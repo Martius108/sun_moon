@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// View holding moon data for content view
 struct MoonDataView: View {
     
     let timezone: TimeZone
