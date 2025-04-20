@@ -8,9 +8,38 @@
 import SwiftUI
 
 struct ChineseSignDataView: View {
+    
+    let birthDates: [BirthDate]
+    
     var body: some View {
-        
-        Text("Data coming soon...")
+        VStack {
+            if let birthDate = birthDates.first {
+                let chineseSign = ChineseSigns.from(date: birthDate.date)
+                HStack {
+                    Text(ChineseSigns.current())
+                        .font(.system(size: 18))
+                        .padding(.top, 1)
+                        .padding(.bottom, 7)
+                }
+                HStack {
+                    Text("Your Sign:")
+                        .font(.system(size: 17))
+                        .foregroundStyle(.blue)
+                        .padding(.bottom, 2)
+                    Text(chineseSign)
+                        .padding(.bottom, 2)
+                }
+                .padding(.bottom, 5)
+            } else {
+                HStack {
+                    Text(ChineseSigns.current())
+                        .font(.system(size: 18))
+                        .padding(.top, 1)
+                        .padding(.bottom, 2)
+                }
+                .padding(.bottom, 4)
+            }
+        }
     }
 }
 

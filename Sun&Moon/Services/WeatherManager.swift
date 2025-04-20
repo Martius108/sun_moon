@@ -10,56 +10,66 @@ import Foundation
 import WeatherKit
 import CoreLocation
 
-// singleton class (shared) holding all the neccessary weather and location data
+/// Singleton class that manages weather-related data and interactions with WeatherKit.
 class WeatherManager {
     
-    // static shared property = instance of this class
+    // Shared instance of WeatherManager
     static let shared = WeatherManager()
-    // private shared property = instance of Apple's WeatherService class
-    let service = WeatherService.shared
     
-    // create a formatter to get the temperature always in the right format
-    var tempFormatter: MeasurementFormatter = {
-        let formatter = MeasurementFormatter()
-        formatter.numberFormatter.maximumFractionDigits = 1
-        return formatter
-    }()
+    // WeatherService instance from Apple's WeatherKit
+    private let service = WeatherService.shared
     
-    // function to get async current weather for given location
+    // Formatter for temperature values
+    var tempFormatter: MeasurementFormatter
+    
+    // Private initializer to ensure only one instance of WeatherManager
+    private init() {
+        // Setup the temperature formatter once during initialization
+        tempFormatter = MeasurementFormatter()
+        tempFormatter.numberFormatter.maximumFractionDigits = 1
+    }
+    
+    /// Fetches the current weather for a given location.
+    /// - Parameter location: The `CLLocation` object representing the location for which weather is requested.
+    /// - Returns: A `CurrentWeather` object containing the current weather information, or `nil` if the request fails.
     func currentWeather(for location: CLLocation) async -> CurrentWeather? {
-        // try to get the current weather data
-        let currentWeather = await Task.detached(priority: .userInitiated) {
-            // try to get the forecast data which are within the current weather package
-            let forecast = try? await self.service.weather(
-                for: location,
-                including: .current
-            )
-            // return the forecast
+        do {
+            // Request current weather data from WeatherKit
+            let forecast = try await service.weather(for: location, including: .current)
             return forecast
-        }.value // needs to be attached because a value is expected
-        // return currentWeather as well
-        return currentWeather
+        } catch {
+            // Log the error and return nil if the request fails
+            print("Failed to fetch current weather: \(error)")
+            return nil
+        }
     }
     
-    // function to get daily weather including sun and moon events
+    /// Fetches the daily forecast for a given location, including sun and moon events.
+    /// - Parameter location: The `CLLocation` object representing the location for which the daily forecast is requested.
+    /// - Returns: A `Forecast<DayWeather>` object containing the daily weather information, or `nil` if the request fails.
     func dailyForecast(for location: CLLocation) async -> Forecast<DayWeather>? {
-        // try to get the daily weather data
-        let dailyForecast = await Task.detached(priority: .userInitiated) {
-            // try to get the forecast data which are within the daily weather package
-            let forecast = try? await self.service.weather(
-                for: location,
-                including: .daily
-            )
+        do {
+            // Request daily weather forecast from WeatherKit
+            let forecast = try await service.weather(for: location, including: .daily)
             return forecast
-        }.value
-        return dailyForecast
+        } catch {
+            // Log the error and return nil if the request fails
+            print("Failed to fetch daily forecast: \(error)")
+            return nil
+        }
     }
     
-    // get the optional weatherAttribution value
+    /// Fetches the weather attribution information, which includes the attribution of the weather data provider.
+    /// - Returns: A `WeatherAttribution` object containing attribution data, or `nil` if the request fails.
     func weatherAttribution() async -> WeatherAttribution? {
-        let attribution = await Task(priority: .userInitiated) {
-            return try? await self.service.attribution
-        }.value
-        return attribution
+        do {
+            // Request weather attribution information
+            let attribution = try await service.attribution
+            return attribution
+        } catch {
+            // Log the error and return nil if the request fails
+            print("Failed to fetch weather attribution: \(error)")
+            return nil
+        }
     }
 }

@@ -10,8 +10,8 @@ import CoreLocation
 
 struct AscendantSign {
     
-    // main func to return ascendant and debug information
-    func calculateAscendantWithDebug(for location: CLLocation, date: Date) -> (String, String) {
+    // main func to return ascendant
+    func calculateAscendantWithDebug(for location: CLLocation, date: Date) -> String {
         let calendar = Calendar(identifier: .gregorian)
         let components = calendar.dateComponents(in: TimeZone(secondsFromGMT: 0)!, from: date)
         
@@ -21,46 +21,28 @@ struct AscendantSign {
               let hour = components.hour,
               let minute = components.minute,
               let second = components.second else {
-            return ("Error while calculating date + time", "Ascendant not found")
+            return (NSLocalizedString("Error while calculating ascendant sign", comment: ""))
         }
         
-        // Julianisches Datum berechnen
+        // get julian date for zodiac sign calculation
         let jd = julianDate(year: year, month: month, day: day, hour: hour, minute: minute, second: second)
         
-        // Berechnung der GMST (Greenwich Mean Sidereal Time)
+        // get Greenwich Mean Sidereal Time
         let gmst = greenwichMeanSiderealTime(julianDate: jd)
         
-        // Berechnung der lokalen Sternzeit (LST) aus GMST
+        // get Local Sidereal Time from GMST
         let longitude = location.coordinate.longitude
         let lst = localSiderealTime(gmst: gmst, longitude: longitude)
         
-        // Umrechnung von LST in hh:mm:ss Format
-        let lstHours = Int(lst / 15)
-        let lstMinutes = Int((lst / 15 - Double(lstHours)) * 60)
-        let lstSeconds = Int((((lst / 15 - Double(lstHours)) * 60) - Double(lstMinutes)) * 60)
-        
-        let formattedLST = String(format: "%02d:%02d:%02d", lstHours, lstMinutes, lstSeconds)
-        
-        // Aszendentenwinkel berechnen
+        // get ascendant angle
         var ascendantDegree = calculateAscendantAngle(latitude: location.coordinate.latitude, lst: lst, julianDate: jd)
         
-        // Korrektur des Aszendentenwinkels um 180° (wie bei Astro-seek)
+        // correction of ascendant angle
         ascendantDegree = (ascendantDegree + 180).truncatingRemainder(dividingBy: 360)
         
-        // Bestimmen des Sternzeichens (Zodiac) mit dem korrigierten Grad
+        // get zodiac sign from angle
         let zodiacSign = zodiacSign(for: ascendantDegree)
-        
-        let debugOutput = """
-        Location: \(location.coordinate.latitude), \(location.coordinate.longitude)
-        UTC Date: \(date)
-        JD: \(jd)
-        GMST: \(gmst)
-        LST: \(lst)
-        LST im Format hh:mm:ss: \(formattedLST)
-        Ascendant: \(zodiacSign) bei \(ascendantDegree)°
-        """
-        
-        return (zodiacSign, debugOutput)
+        return (zodiacSign)
     }
     
     // julian date calculation

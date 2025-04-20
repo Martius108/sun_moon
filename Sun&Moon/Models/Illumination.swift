@@ -82,7 +82,7 @@ struct Illumination {
             
             return String(format: "%.f", illumination)
         }
-        return "Error while calculating illumination"
+        return NSLocalizedString("Error while calculating illumination", comment: "")
     }
 }
 

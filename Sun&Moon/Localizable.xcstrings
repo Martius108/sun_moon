@@ -1,6 +1,9 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "" : {
+
+    },
     "%@," : {
       "localizations" : {
         "de" : {
@@ -180,18 +183,19 @@
         }
       }
     },
-    "Ascendant unknown" : {
+    "Asc." : {
+      "extractionState" : "manual",
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Aszendent unbekannt"
+            "value" : "Asz."
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ascendant unknown"
+            "value" : "Asc."
           }
         }
       }
@@ -225,6 +229,86 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ascendant: %@"
+          }
+        }
+      }
+    },
+    "Attribution could not be loaded." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quellenangabe konnte nicht geladen werden."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Attribution could not be loaded."
+          }
+        }
+      }
+    },
+    "Birth Data" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Geburtsdaten"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Birth Data"
+          }
+        }
+      }
+    },
+    "Birth Date" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Geburtstag"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Birth Date"
+          }
+        }
+      }
+    },
+    "Birth Time" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Geburtszeit"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Birth Time"
+          }
+        }
+      }
+    },
+    "Cancel" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abbrechen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancel"
           }
         }
       }
@@ -295,8 +379,22 @@
         }
       }
     },
-    "Change you background image here!" : {
-
+    "Chinese Zodiac Sign" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chinesisches Sternzeichen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chinese Zodiac Sign"
+          }
+        }
+      }
     },
     "Chinese Zodiac Sign:" : {
       "extractionState" : "manual",
@@ -311,6 +409,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Chinese Zodiac Sign:"
+          }
+        }
+      }
+    },
+    "City" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stadt"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "City"
           }
         }
       }
@@ -331,18 +445,18 @@
         }
       }
     },
-    "Data coming soon..." : {
+    "Delete" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Daten werden geladen…"
+            "value" : "Löschen"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Data coming soon…"
+            "value" : "Delete"
           }
         }
       }
@@ -413,18 +527,50 @@
         }
       }
     },
-    "Fetching Weather data ..." : {
+    "Error while calculating ascendant sign" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "Fehler bei der Berechnung des Aszendenten"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error while calculating ascendant sign"
+          }
+        }
+      }
+    },
+    "Error while calculating illumination" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fehler bei der Berechnung der Beleuchtung"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error while calculating illumination"
+          }
+        }
+      }
+    },
+    "Fetching Weather data ..." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "Lade Wetterdaten …"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Fetching weather data …"
+            "value" : "Fetching Weather data …"
           }
         }
       }
@@ -479,6 +625,43 @@
         }
       }
     },
+    "Get your Zodiac Sign:" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zeige dein Sternzeichen an:"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Get your Zodiac Sign:"
+          }
+        }
+      }
+    },
+    "Get Your Zodiac Sign:" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Zeige dein Sternzeichen an:"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Get your Zodiac Sign:"
+          }
+        }
+      }
+    },
+    "Get your Zodiac Sign: " : {
+
+    },
     "Goat 🐐" : {
       "localizations" : {
         "de" : {
@@ -507,6 +690,54 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Horse 🐎"
+          }
+        }
+      }
+    },
+    "Invalid Coordinates" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ungültige Koordinaten"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Invalid Coordinates"
+          }
+        }
+      }
+    },
+    "Latitude" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Breitengrad"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Latitude"
+          }
+        }
+      }
+    },
+    "Legal Information" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rechtshinweise"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Legal Information"
           }
         }
       }
@@ -577,6 +808,22 @@
         }
       }
     },
+    "Loading attribution..." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Lade Quellenangabe…"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Loading attribution…"
+          }
+        }
+      }
+    },
     "LocationServices" : {
       "localizations" : {
         "de" : {
@@ -589,6 +836,22 @@
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Location Services"
+          }
+        }
+      }
+    },
+    "Longitude" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Längengrad"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Longitude"
           }
         }
       }
@@ -811,22 +1074,6 @@
         }
       }
     },
-    "My Cities" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Meine Städte"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "My Cities"
-          }
-        }
-      }
-    },
     "No new year date found" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -840,6 +1087,38 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "No new year date found"
+          }
+        }
+      }
+    },
+    "No weather data" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keine Wetterdaten"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No weather data"
+          }
+        }
+      }
+    },
+    "OK" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OK"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OK"
           }
         }
       }
@@ -909,15 +1188,61 @@
         }
       }
     },
-    "Put in your birth date here!" : {
-
+    "Please enter correct values with a dot separator" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bitte gebe gültige Koordinaten ein und nutze den Punkt als Dezimalstelle"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Please enter correct values with a dot separator"
+          }
+        }
+      }
+    },
+    "Please enter correct values. Latitude must be between -90 and 90 and Longitude between -180 and 180." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bitte gebe korrekte Koordinaten ein. Die Breite muss zwischen -90 und 90 liegen und die Länge zwischen -180 und 180."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Please enter correct values. Latitude must be between -90 and 90 and Longitude between -180 and 180."
+          }
+        }
+      }
+    },
+    "Please enter your birth data" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bitte gib deine Geburtsdaten ein"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Please enter your birth data"
+          }
+        }
+      }
     },
     "Rabbit 🐇" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Kaninchen 🐇"
+            "value" : "Haase 🐇"
           }
         },
         "en" : {
@@ -1026,22 +1351,6 @@
         }
       }
     },
-    "Searching for city" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Suche nach Stadt"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Searching for City"
-          }
-        }
-      }
-    },
     "Settings" : {
       "localizations" : {
         "de" : {
@@ -1088,6 +1397,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Snake 🐍"
+          }
+        }
+      }
+    },
+    "Submit" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Speichern"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Submit"
           }
         }
       }
@@ -1220,6 +1545,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Wood"
+          }
+        }
+      }
+    },
+    "Your Sign:" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dein Zeichen:"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Your Sign:"
           }
         }
       }

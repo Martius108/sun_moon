@@ -15,28 +15,23 @@ struct ZodiacDataView: View {
     let westernSignName = WesternSigns()
     
     var body: some View {
+        let (day, month, _) = currentWeather.date.getDayMonth()
+        let (name, element, symbol) = westernSignName.getName(day: day, month: month)
         
         HStack {
-            
-            let (name, element, symbol) = westernSignName.getName(day: currentWeather.date.getDayMonth().currentDay, month: currentWeather.date.getDayMonth().currentMonth)
-            if (element == "Luft") {
-                Text(symbol)
-                    .font(.system(size: 30, weight: .bold, design: .rounded))
-                    .foregroundColor(.blue)
-            } else if (element == "Feuer") {
-                Text(symbol)
-                    .font(.system(size: 30, weight: .bold, design: .rounded))
-                    .foregroundColor(.red)
-            } else if (element == "Erde") {
-                Text(symbol)
-                    .font(.system(size: 30, weight: .bold, design: .rounded))
-                    .foregroundColor(.green)
-            } else {
-                Text(symbol)
-                    .font(.system(size: 30, weight: .bold, design: .rounded))
-                    .foregroundColor(.yellow)
-            }
+            Text(symbol)
+                .font(.system(size: 30, weight: .bold, design: .rounded))
+                .foregroundColor({
+                    switch element {
+                    case NSLocalizedString("Air", comment: ""): return .blue
+                    case NSLocalizedString("Fire", comment: ""): return .red
+                    case NSLocalizedString("Earth", comment: ""): return .green
+                    default: return .yellow
+                    }
+                }())
             Text("\(name), Element: \(element)")
+                .font(.system(size: 18))
         }
     }
 }
+

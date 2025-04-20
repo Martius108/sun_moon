@@ -7,9 +7,12 @@
 
 import Foundation
 
+// Struct to handle Chinese Zodiac calculations
 struct ChineseSigns {
     
+    // A dictionary holding the fixed Chinese New Year dates for each year from 1961 to 2050
     static func chineseNewYearDate(for year: Int) -> Date? {
+        // Predefined list of Chinese New Year dates by year
         let chineseNewYears: [Int: String] = [
             1961: "1961-02-15", 1962: "1962-02-05", 1963: "1963-01-25",
             1964: "1964-02-13", 1965: "1965-02-02", 1966: "1966-01-21",
@@ -43,16 +46,21 @@ struct ChineseSigns {
             2048: "2048-02-14", 2049: "2049-02-02", 2050: "2050-01-23"
         ]
         
+        // Safely unwrap the Chinese New Year date for the given year from the dictionary
         guard let dateString = chineseNewYears[year] else { return nil }
         
+        // Initialize a DateFormatter to convert the string into a Date object
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
-        formatter.timeZone = TimeZone(identifier: "Asia/Shanghai")
+        formatter.timeZone = TimeZone(identifier: "Europe/Berlin")
         
+        // Return the date as a Date object
         return formatter.date(from: dateString)
     }
     
+    // This method calculates the Chinese Zodiac sign with its associated element based on a given year
     static func chineseZodiacWithElement(for year: Int) -> String {
+        // List of Chinese Zodiac animals in their cycle order
         let zodiacAnimals = [
             NSLocalizedString("Rat 🐀", comment: ""), NSLocalizedString("Ox 🐂", comment: ""),
             NSLocalizedString("Tiger 🐅", comment: ""), NSLocalizedString("Rabbit 🐇", comment: ""),
@@ -62,6 +70,7 @@ struct ChineseSigns {
             NSLocalizedString("Dog 🐕", comment: ""), NSLocalizedString("Pig 🐖", comment: "")
         ]
         
+        // Elements associated with each animal in the zodiac cycle
         let elements = [
             NSLocalizedString("Wood", comment: ""), NSLocalizedString("Wood", comment: ""),
             NSLocalizedString("Fire", comment: ""), NSLocalizedString("Fire", comment: ""),
@@ -70,28 +79,38 @@ struct ChineseSigns {
             NSLocalizedString("Water", comment: ""), NSLocalizedString("Water", comment: "")
         ]
         
+        // The base year (1984) where the cycle starts for the Chinese Zodiac
         let baseYear = 1984
+        
+        // Calculate the stem-branch index to determine the position in the 60-year cycle
         let stemBranchIndex = (year - baseYear) % 60
         let correctedIndex = stemBranchIndex >= 0 ? stemBranchIndex : (stemBranchIndex + 60)
         
+        // Get the corresponding element and animal based on the index
         let elementIndex = correctedIndex % 10
         let animalIndex = correctedIndex % 12
         
+        // Return the string representation of the element and animal
         return "\(elements[elementIndex]) \(zodiacAnimals[animalIndex])"
     }
     
+    // Given a date, returns the Chinese Zodiac sign with element for the year of the date
     static func from(date: Date) -> String {
+        // Extract the year from the provided date
         let calendar = Calendar(identifier: .gregorian)
         let year = calendar.component(.year, from: date)
         
+        // Get the Chinese New Year date for the year
         guard let chineseNewYear = chineseNewYearDate(for: year) else {
-            return "No new year date found"
+            return NSLocalizedString("No new year date found", comment: "")
         }
         
+        // If the given date is before the Chinese New Year, use the previous year's zodiac
         let zodiacYear = date < chineseNewYear ? year - 1 : year
         return chineseZodiacWithElement(for: zodiacYear)
     }
     
+    // Returns the Chinese Zodiac sign with element for the current date
     static func current() -> String {
         return from(date: Date())
     }

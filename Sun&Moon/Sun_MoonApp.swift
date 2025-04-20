@@ -6,20 +6,22 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct Sun_MoonApp: App {
     
-    @State private var locationManager = LocationManager()
+    @StateObject private var locationManager = LocationManager()
     
     var body: some Scene {
         WindowGroup {
             if locationManager.isAuthorized {
-                ForecastView()
+                ContentView()
             } else {
                 LocationDeniedView()
             }
         }
-        .environment(locationManager)
+        .modelContainer(for: BirthDate.self) // prepare for SwiftData
+        .environmentObject(locationManager)
     }
 }

@@ -13,7 +13,7 @@ struct AscendantDataView: View {
     
     let weatherManager = WeatherManager.shared
     let currentWeather: CurrentWeather?
-    let selectedCity: City?
+    let selectedLocation: CLLocation
     var ascendantSign = AscendantSign()
     
     var body: some View {
@@ -26,25 +26,17 @@ struct AscendantDataView: View {
             Text("Ascendant:")
                 .font(.system(size: 17))
                 .padding(.bottom, 2)
-            if let city = selectedCity {
-                let ascendantSign = getCurrentAscendentZodiacSign(location: city.clLocation)
+            let ascendantSign = getCurrentAscendentZodiacSign(location: selectedLocation)
                 Text(ascendantSign)
                     .font(.system(size: 17))
                     .padding(.bottom, 2)
-            } else {
-                Text("Ascendant unknown")
-                    .font(.system(size: 17))
-                    .padding(.bottom, 2)
-            }
         }
     }
     
     func getCurrentAscendentZodiacSign(location: CLLocation) -> String {
         
-        guard let currentWeather else { return "No weather data" }
-        let (zodiacSign, debugOutput) = ascendantSign.calculateAscendantWithDebug(for: location, date: currentWeather.date)
-
-        print(debugOutput)
+        guard let currentWeather else { return NSLocalizedString("No weather data", comment: "") }
+        let (zodiacSign) = ascendantSign.calculateAscendantWithDebug(for: location, date: currentWeather.date)
         return zodiacSign
     }
 }
