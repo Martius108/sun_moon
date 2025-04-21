@@ -44,12 +44,12 @@ struct AttributionView: View {
                     .padding(.bottom, 9)
             } else if isLoading {
                 // If still loading, show a loading indicator
-                ProgressView("Loading attribution...")
+                ProgressView("Loading attribution ...")
                     .progressViewStyle(CircularProgressViewStyle())
                     .padding(.top, 10)
             } else {
                 // If attribution could not be loaded, show an error message
-                Text("Attribution could not be loaded.")
+                Text("No connection")
                     .font(.footnote)
                     .foregroundColor(.red)
                     .padding(.top, 10)

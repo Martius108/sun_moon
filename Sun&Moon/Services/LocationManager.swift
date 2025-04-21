@@ -44,7 +44,7 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     // Create a function to return the city name
     func getLocationName(for location: CLLocation) async -> String {
         let name = try? await CLGeocoder().reverseGeocodeLocation(location).first?.locality
-        return name ?? "Unknown Location"
+        return name ?? NSLocalizedString("Unknown City", comment: "")
     }
     
     // Get the timezone of the selected location

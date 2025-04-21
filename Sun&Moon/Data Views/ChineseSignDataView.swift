@@ -19,7 +19,7 @@ struct ChineseSignDataView: View {
                 HStack {
                     Text(ChineseSigns.current())
                         .font(.system(size: 18))
-                        .padding(.top, 1)
+                        .padding(.top, 2)
                         .padding(.bottom, 7)
                 }
                 HStack {
@@ -35,7 +35,7 @@ struct ChineseSignDataView: View {
                 HStack {
                     Text(ChineseSigns.current())
                         .font(.system(size: 18))
-                        .padding(.top, 1)
+                        .padding(.top, 2)
                         .padding(.bottom, 2)
                 }
                 .padding(.bottom, 4)

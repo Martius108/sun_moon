@@ -9,8 +9,9 @@ import SwiftUI
 import UIKit
 
 // A custom TextField that uses a UIKit UITextField under the hood.
-// It became necessary because a SwiftUI TextField always calls a standard keyboard,
-// either letters or numbers. But here a special keyboard was needed.
+// It became necessary because a SwiftUI TextField always triggers a standard keyboard,
+// either letters or numbers. Here a special keyboard is needed for location coordinates.
+
 // This allows for more control and integration with UIKit features,
 // such as setting a custom inputView (our NumPadView).
 struct CustomTextField: UIViewRepresentable {
@@ -18,7 +19,7 @@ struct CustomTextField: UIViewRepresentable {
     @Binding var isFocused: Bool // Binding to track whether the TextField is currently focused
     var keyboardType: UIKeyboardType = .numberPad // The keyboard type to use by default
 
-    // Creates the underlying UIKit view (UITextField).
+    // Creates the underlying UIKit
     func makeUIView(context: Context) -> UITextField {
         let textField = UITextField()
         textField.delegate = context.coordinator // Sets the delegate to our Coordinator for handling events

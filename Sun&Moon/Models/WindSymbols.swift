@@ -8,7 +8,7 @@
 import SwiftUI
 import WeatherKit
 
-// create a wind symbol
+// Create wind symbols
 func windSymbols(for windSpeed: Measurement<UnitSpeed>) -> String {
     let kmh = windSpeed.converted(to: .kilometersPerHour).value
 

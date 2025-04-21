@@ -8,22 +8,23 @@
 import Foundation
 import CoreLocation
 
+// Struct to get moon illumination
 struct Illumination {
     
     let currentDate = Date()
     let calendar = Calendar.current
  
-    // convert degrees to rad
+    // Convert degrees to rad
     private func degToRad(_ degrees: Double) -> Double {
         return degrees * .pi / 180.0
     }
 
-    // normalize angle
+    // Normalize angle
     private func normalizeAngle(_ angle: Double) -> Double {
         return angle.truncatingRemainder(dividingBy: 360.0)
     }
 
-    // get julian date
+    // Get simplified julian date
     private func julianDate(year: Int, month: Int, day: Int, hour: Int, minute: Int, second: Int, timezoneOffset: Double) -> Double {
         let Y = (month <= 2) ? year - 1 : year
         let M = (month <= 2) ? month + 12 : month
@@ -34,20 +35,20 @@ struct Illumination {
         return floor(365.25 * Double(Y + 4716)) + floor(30.6001 * Double(M + 1)) + Double(day) + B - 1524.5 + dayFraction
     }
 
-    // calculate moon illumination
+    // Calculate moon illumination
     private func moonIllumination(julianDate: Double) -> Double {
         let T = (julianDate - 2451545.0) / 36525.0
         
-        // sun's mean anomaly (M)
+        // Sun's mean anomaly (M)
         let M = normalizeAngle(357.52911 + 35999.05029 * T - 0.0001537 * T * T)
         
-        // moon's mean anomaly (M')
+        // Moon's mean anomaly (M')
         let Mm = normalizeAngle(134.9634 + 477198.8676 * T + 0.008997 * T * T)
         
-        // moon's mean elongation (D)
+        // Moon's mean elongation (D)
         let D = normalizeAngle(297.8502 + 445267.1115 * T - 0.001630 * T * T)
         
-        // compute phase angle correction
+        // Compute phase angle correction
         let i = 180 - D
             - 6.289 * sin(degToRad(Mm))
             + 2.100 * sin(degToRad(M))
@@ -56,7 +57,7 @@ struct Illumination {
             - 0.214 * sin(degToRad(2 * Mm))
             - 0.110 * sin(degToRad(D))
         
-        // compute fraction of moon illuminated and return illumination
+        // Compute fraction of moon illuminated and return illumination
         let illumination = (1 + cos(degToRad(i))) / 2
         return illumination
     }

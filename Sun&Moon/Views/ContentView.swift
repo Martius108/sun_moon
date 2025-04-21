@@ -47,23 +47,22 @@ struct ContentView: View {
         ZStack {
             Image(.image2)
                 .imageStyle()
-            VStack { // main VStack
+            VStack { // Main VStack
                 HStack { // header city name
                     Text(cityName ?? (isLoading ? "Loading City ..." : "Unknown City"))
                         .font(.system(size: 26, weight: .regular, design: .default))
                         .foregroundStyle(.white)
+                        .padding(.top, 3)
                 }
-                HStack { // header date + time
-                    Text("\(currentWeather?.date.getDayMonth().weekday ?? "Sunday"),")
+                HStack { // Header date + time
+                    Text("\(currentWeather?.date.getDayMonth().weekday ?? NSLocalizedString("Unknown Weekday", comment: "")),")
                         .textStyle1()
                     if let currentWeather = currentWeather {
-                        Text("\(currentWeather.date.localDate(for: timezone)),")
-                            .textStyle1()
-                        Text(currentWeather.date.localTime(for: timezone))
+                        Text("\(currentWeather.date.localDate(for: timezone))")
                             .textStyle1()
                     }
                 }
-                // weather VStack
+                // Weather VStack
                 VStack {
                     if isLoading { // check if weather data are already present
                         ProgressView("Fetching Weather data ...")
@@ -73,22 +72,26 @@ struct ContentView: View {
                                 CurrentWeatherDataView(currentWeather: currentWeather)
                                 let windInfo = windSymbols(for: currentWeather.wind.speed)
                                 Image(systemName: windInfo)
+                            } else {
+                                Text("No Weather data available")
                             }
                         }
                     }
                 }
                 .vstackStyle()
-                // sun VStack
+                // Sun VStack
                 VStack {
                     Text("Sun")
                         .headerStyle()
                     if let sunrise = sunrise, let sunset = sunset, let solarNoon = solarNoon {
                         SunDataView(timezone: timezone, sunrise: sunrise, sunset: sunset,
                                     solarNoon: solarNoon)
+                    } else {
+                        Text("No Sun data available")
                     }
                 }
                 .vstackStyle()
-                // moon VStack
+                // Moon VStack
                 VStack {
                     Text("Moon")
                         .headerStyle()
@@ -101,13 +104,15 @@ struct ContentView: View {
                         Text("Moon Phase: \(moonPhaseEnum.localizedString), \(moonIllumination)%")
                             .padding(.top, 1)
                             .padding(.bottom, 4)
+                    } else {
+                        Text("No Moon data available")
                     }
                 }
                 .vstackStyle()
-                // zodiac sign VStack
+                // Zodiac sign VStack
                 VStack {
                     Text("Current Zodiac Sign")
-                        .headerStyle()
+                        .font(.title2)
                     let location = currentLocation
                     AscendantDataView(currentWeather: currentWeather, selectedLocation: location)
                     
@@ -141,7 +146,7 @@ struct ContentView: View {
                     }
                 }
                 .vstackStyle()
-                // zodiac sign VStack
+                // Chinese zodiac sign VStack
                 VStack {
                     Text("Chinese Zodiac Sign")
                         .headerStyle()
@@ -173,24 +178,24 @@ struct ContentView: View {
         }
         .preferredColorScheme(.dark)
     }
-    
+    // Fetching current weather
     func fetchWeather(for userLocation: CLLocation) async {
-        // perform async operations in a detached task, updating UI on MainActor
+        // Perform async operations in a detached task, updating UI on MainActor
         Task.detached { @MainActor in
             // fetch weather, forecast, and location name concurrently
             async let currentWeatherData = weatherManager.currentWeather(for: userLocation)
             async let dailyForecastData = weatherManager.dailyForecast(for: userLocation)
             async let fetchedCityName = locationManager.getLocationName(for: userLocation)
 
-            // use await in async operation
+            // Use await in async operation
             let (fetchedCurrentWeather, fetchedDailyForecast, fetchedName) = await (currentWeatherData, dailyForecastData, fetchedCityName)
 
-            // update state variables on MainActor
+            // Update state variables on MainActor
             self.currentWeather = fetchedCurrentWeather
             self.dailyForecast = fetchedDailyForecast
             self.cityName = fetchedName
 
-            // extract sun/moon data
+            // Extract sun/moon data
             if let firstDayForecast = fetchedDailyForecast?.first {
                 self.sunrise = firstDayForecast.sun.sunrise
                 self.sunset = firstDayForecast.sun.sunset
@@ -199,7 +204,7 @@ struct ContentView: View {
                 self.moonset = firstDayForecast.moon.moonset
                 self.currentMoonPhase = firstDayForecast.moon.phase.rawValue
             } else {
-                 // clear sun/moon data if there is no forecast
+                 // Clear sun/moon data if there is no forecast
                  self.sunrise = nil
                  self.sunset = nil
                  self.solarNoon = nil
@@ -207,7 +212,7 @@ struct ContentView: View {
                  self.moonset = nil
                  self.currentMoonPhase = nil
             }
-            // finish loading (success)
+            // Finish loading (success)
             self.isLoading = false
         }
     }
@@ -215,5 +220,5 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
-        .environmentObject(LocationManager()) // add location manager here
+        .environmentObject(LocationManager()) // Add location manager here
 }

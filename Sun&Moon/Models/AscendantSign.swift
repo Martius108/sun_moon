@@ -10,7 +10,7 @@ import CoreLocation
 
 struct AscendantSign {
     
-    // main func to return ascendant
+    // Main func to return ascendant
     func calculateAscendantWithDebug(for location: CLLocation, date: Date) -> String {
         let calendar = Calendar(identifier: .gregorian)
         let components = calendar.dateComponents(in: TimeZone(secondsFromGMT: 0)!, from: date)
@@ -24,20 +24,20 @@ struct AscendantSign {
             return (NSLocalizedString("Error while calculating ascendant sign", comment: ""))
         }
         
-        // get julian date for zodiac sign calculation
+        // Get julian date for zodiac sign calculation
         let jd = julianDate(year: year, month: month, day: day, hour: hour, minute: minute, second: second)
         
-        // get Greenwich Mean Sidereal Time
+        // Get Greenwich Mean Sidereal Time
         let gmst = greenwichMeanSiderealTime(julianDate: jd)
         
-        // get Local Sidereal Time from GMST
+        // Get Local Sidereal Time from GMST
         let longitude = location.coordinate.longitude
         let lst = localSiderealTime(gmst: gmst, longitude: longitude)
         
-        // get ascendant angle
+        // Get ascendant angle
         var ascendantDegree = calculateAscendantAngle(latitude: location.coordinate.latitude, lst: lst, julianDate: jd)
         
-        // correction of ascendant angle
+        // Correction of ascendant angle
         ascendantDegree = (ascendantDegree + 180).truncatingRemainder(dividingBy: 360)
         
         // get zodiac sign from angle
@@ -45,7 +45,7 @@ struct AscendantSign {
         return (zodiacSign)
     }
     
-    // julian date calculation
+    // Julian date calculation
     func julianDate(year: Int, month: Int, day: Int, hour: Int, minute: Int, second: Int) -> Double {
         var y = year
         var m = month
@@ -79,7 +79,7 @@ struct AscendantSign {
         return LST
     }
     
-    // ascendant angle calculation
+    // Ascendant angle calculation
     func calculateAscendantAngle(latitude: Double, lst: Double, julianDate: Double) -> Double {
         let T = (julianDate - 2451545.0) / 36525.0
         let epsilon = degToRad(23.439291 - 0.0130042 * T)
@@ -94,7 +94,7 @@ struct AscendantSign {
         return normalizeAngle(radToDeg(ascRad))
     }
     
-    // get zodiac sign from angle
+    // Get zodiac sign from angle
     func zodiacSign(for degree: Double) -> String {
         let signs = [
             NSLocalizedString("Aries ♈︎", comment: ""), NSLocalizedString("Taurus ♉︎", comment: ""), NSLocalizedString("Gemini ♊︎", comment: ""), NSLocalizedString("Cancer ♋︎", comment: ""),

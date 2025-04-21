@@ -22,6 +22,7 @@ struct ZodiacDataView: View {
         HStack {
             Text(symbol)
                 .font(.system(size: 30, weight: .bold, design: .rounded))
+                .padding(.bottom, 4)
                 .foregroundColor({
                     switch element {
                     case NSLocalizedString("Air", comment: ""): return .blue

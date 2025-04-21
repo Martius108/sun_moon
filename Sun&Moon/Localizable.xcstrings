@@ -4,6 +4,22 @@
     "" : {
 
     },
+    "%@" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@"
+          }
+        }
+      }
+    },
     "%@," : {
       "localizations" : {
         "de" : {
@@ -229,22 +245,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ascendant: %@"
-          }
-        }
-      }
-    },
-    "Attribution could not be loaded." : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Verbindung verloren…"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Connection lost…"
           }
         }
       }
@@ -804,18 +804,18 @@
         }
       }
     },
-    "Loading attribution..." : {
+    "Loading attribution ..." : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Lade Quellenangabe…"
+            "state" : "translated",
+            "value" : "Lade Quellenangabe …"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Loading attribution…"
+            "value" : "Loading attribution …"
           }
         }
       }
@@ -1070,6 +1070,38 @@
         }
       }
     },
+    "No connection" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keine Verbindung"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No connection"
+          }
+        }
+      }
+    },
+    "No Moon data available" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keine Monddaten verfügbar"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No Moon data available"
+          }
+        }
+      }
+    },
     "No new year date found" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1087,6 +1119,22 @@
         }
       }
     },
+    "No Sun data available" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keine Sonnendaten verfügbar"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No Sun data available"
+          }
+        }
+      }
+    },
     "No weather data" : {
       "localizations" : {
         "de" : {
@@ -1099,6 +1147,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "No weather data"
+          }
+        }
+      }
+    },
+    "No Weather data available" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keine Wetterdaten verfügbar"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No Weather data available"
           }
         }
       }
@@ -1474,6 +1538,39 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tiger 🐅"
+          }
+        }
+      }
+    },
+    "Unknown City" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unbekannte Stadt"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unknown city"
+          }
+        }
+      }
+    },
+    "Unknown Weekday" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unbekannter Wochentag"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unknown Weekday"
           }
         }
       }
