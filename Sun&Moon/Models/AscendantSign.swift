@@ -8,10 +8,11 @@
 import Foundation
 import CoreLocation
 
+// Sruct to calculate ascendant sign
 struct AscendantSign {
     
     // Main func to return ascendant
-    func calculateAscendantWithDebug(for location: CLLocation, date: Date) -> String {
+    func calculateAscendantSign(for location: CLLocation, date: Date) -> String {
         let calendar = Calendar(identifier: .gregorian)
         let components = calendar.dateComponents(in: TimeZone(secondsFromGMT: 0)!, from: date)
         

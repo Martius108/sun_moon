@@ -40,11 +40,10 @@ struct YourSignDataView: View {
                 Text(ascendantSign)
                     .font(.system(size: 17))
         }
-        .padding(.bottom, 2)
     }
     
     func getCurrentAscendentZodiacSign(location: CLLocation) -> String {
-        let (zodiacSign) = ascendantSign.calculateAscendantWithDebug(for: birthLocation, date: birthDate.combinedDateTime)
+        let (zodiacSign) = ascendantSign.calculateAscendantSign(for: birthLocation, date: birthDate.combinedDateTime)
         return zodiacSign
     }
 }

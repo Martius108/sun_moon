@@ -19,10 +19,9 @@ struct ZodiacDataView: View {
         let (day, month, _) = currentWeather.date.getDayMonth()
         let (name, element, symbol) = westernSignName.getName(day: day, month: month)
         
-        HStack {
+        HStack(alignment: .lastTextBaseline) {
             Text(symbol)
                 .font(.system(size: 30, weight: .bold, design: .rounded))
-                .padding(.bottom, 4)
                 .foregroundColor({
                     switch element {
                     case NSLocalizedString("Air", comment: ""): return .blue
@@ -33,6 +32,7 @@ struct ZodiacDataView: View {
                 }())
             Text("\(name), Element: \(element)")
                 .font(.system(size: 18))
+                .baselineOffset(2)
         }
     }
 }

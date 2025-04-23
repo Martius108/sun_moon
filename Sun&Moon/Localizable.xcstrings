@@ -625,6 +625,22 @@
         }
       }
     },
+    "Get Coordinates" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lade Koordinaten"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Get Coordinates"
+          }
+        }
+      }
+    },
     "Get Your Zodiac Sign:" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -690,18 +706,18 @@
         }
       }
     },
-    "Invalid Coordinates" : {
+    "Invalid City or Coordinates" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ungültige Koordinaten"
+            "value" : "Ungültige Stadt oder Koordinaten"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Invalid Coordinates"
+            "value" : "Invalid City or Coordinates"
           }
         }
       }
@@ -1086,6 +1102,22 @@
         }
       }
     },
+    "No data available" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keine Daten verfügbar"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No data available"
+          }
+        }
+      }
+    },
     "No Moon data available" : {
       "localizations" : {
         "de" : {
@@ -1135,22 +1167,6 @@
         }
       }
     },
-    "No weather data" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Keine Wetterdaten"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "No weather data"
-          }
-        }
-      }
-    },
     "No Weather data available" : {
       "localizations" : {
         "de" : {
@@ -1163,6 +1179,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "No Weather data available"
+          }
+        }
+      }
+    },
+    "No Zodiac data available" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kein Sternzeichen verfügbar"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No Zodiac data available"
           }
         }
       }
@@ -1558,19 +1590,19 @@
         }
       }
     },
-    "Unknown Weekday" : {
+    "Unknown Date" : {
       "extractionState" : "manual",
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Unbekannter Wochentag"
+            "value" : "Unbekanntes Datum"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Unknown Weekday"
+            "value" : "Unknown Date"
           }
         }
       }

@@ -21,23 +21,25 @@ struct AscendantDataView: View {
         
         if let currentWeather = currentWeather {
             ZodiacDataView(currentWeather: currentWeather)
+        } else {
+            Text("No Zodiac data available")
+                .padding(.top, 1)
         }
-        
         HStack {
             Text("Ascendant:")
                 .font(.system(size: 17))
-                .padding(.bottom, 2)
-            let ascendantSign = getCurrentAscendentZodiacSign(location: selectedLocation)
-                Text(ascendantSign)
+                .padding(.bottom, 1)
+            let currentAscendantSign = getCurrentAscendentSign(location: selectedLocation)
+                Text(currentAscendantSign)
                     .font(.system(size: 17))
-                    .padding(.bottom, 2)
+                    .padding(.bottom, 1)
         }
     }
     
-    func getCurrentAscendentZodiacSign(location: CLLocation) -> String {
+    func getCurrentAscendentSign(location: CLLocation) -> String {
         
-        guard let currentWeather else { return NSLocalizedString("No weather data", comment: "") }
-        let (zodiacSign) = ascendantSign.calculateAscendantWithDebug(for: location, date: currentWeather.date)
+        guard let currentWeather else { return NSLocalizedString("No data available", comment: "") }
+        let (zodiacSign) = ascendantSign.calculateAscendantSign(for: location, date: currentWeather.date)
         return zodiacSign
     }
 }

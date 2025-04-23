@@ -13,7 +13,8 @@ struct AttributionView: View {
     
     // Environment for changing the color scheme
     @Environment(\.colorScheme) private var colorScheme
-    
+    // Check the network status
+    @ObservedObject var networkMonitor: NetworkMonitor
     // WeatherManager shared instance
     let weatherManager = WeatherManager.shared
     
@@ -56,20 +57,33 @@ struct AttributionView: View {
             }
         }
         .padding()
-        .task {
-            // Fetch the attribution asynchronously
-            await loadAttribution()
+        .task(id: networkMonitor.isConnected) {
+            print("Network status changed: \(networkMonitor.isConnected)")
+            // Check network status
+            guard networkMonitor.isConnected else {
+                attribution = nil
+                isLoading = false
+                return
+            }
+            if attribution == nil {
+                isLoading = true
+                await loadAttribution()
+            }
         }
     }
-    
     /// Asynchronously fetches the weather attribution data.
     private func loadAttribution() async {
-        // Fetch attribution from the WeatherManager
-        attribution = await weatherManager.weatherAttribution()
-        isLoading = false // Update loading state once done
+        isLoading = true
+        let result = await weatherManager.weatherAttribution()
+        if let result {
+            attribution = result
+        } else {
+            attribution = nil
+        }
+        isLoading = false
     }
 }
 
 #Preview {
-    AttributionView()
+    AttributionView(networkMonitor: NetworkMonitor())
 }

@@ -16,7 +16,7 @@ struct VStackStyle: ViewModifier {
             // Set the maximum width of the VStack to 95% of the screen width
             .frame(maxWidth: 0.95 * UIScreen.main.bounds.width)
             // Apply vertical padding for spacing between elements
-            .padding(.vertical, 8)
+            .padding(.vertical, 7)
             // Set a regular material background style (blurred effect)
             .background(.regularMaterial)
             // Force the color scheme to light mode

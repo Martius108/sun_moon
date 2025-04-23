@@ -7,6 +7,7 @@
 
 import SwiftUI
 import SwiftData
+import CoreLocation
 
 // This View enables the input of users birth and location data
 struct BirthDateView: View {
@@ -32,6 +33,7 @@ struct BirthDateView: View {
     // State to track focus for displaying the custom NumPad.
     @FocusState private var isLatitudeFocused: Bool
     @FocusState private var isLongitudeFocused: Bool
+    @FocusState private var isCityFocused: Bool
 
     var body: some View {
         ZStack {
@@ -52,6 +54,7 @@ struct BirthDateView: View {
                     Text("City")
                     TextField("City", text: $city)
                         .textFieldStyle(.roundedBorder)
+                        .focused($isCityFocused)
                         .textInputAutocapitalization(.words)
                         .autocorrectionDisabled(true)
                         .overlay(
@@ -68,6 +71,14 @@ struct BirthDateView: View {
                                 }
                             }
                         )
+                    HStack {
+                        Spacer()
+                        Button("Get Coordinates") {
+                            getCoordinates()
+                        }
+                        .fontWeight(isCityFocused ? .bold : .regular)
+                        Spacer()
+                    }
 
                     Text("Latitude")
                     CustomTextField(text: $latitude, isFocused: $isLatitudeFocusedInternal, keyboardType: .numberPad)
@@ -185,7 +196,7 @@ struct BirthDateView: View {
                 .zIndex(1) // Ensures the NumPad is above other elements.
             }
         }
-        .alert("Invalid Coordinates", isPresented: $showInvalidCoordinates) {
+        .alert("Invalid City or Coordinates", isPresented: $showInvalidCoordinates) {
             Button("OK", role: .cancel) { }
         } message: {
             Text("Please enter correct values. Latitude must be between -90 and 90 and Longitude between -180 and 180.")
@@ -202,6 +213,7 @@ struct BirthDateView: View {
     }
 
     func saveBirthDate() {
+        
         guard let lat = Double(latitude), let lon = Double(longitude) else {
             showInvalidCoordinates = true
             return
@@ -239,10 +251,55 @@ struct BirthDateView: View {
             print("Error deleting data: \(error)")
         }
     }
+    
+    func getCoordinates() {
+        #if DEBUG
+        if ProcessInfo.processInfo.environment["XCODE_RUNNING_FOR_PREVIEWS"] == "1" {
+            print("Preview mode: Skipping geocoding.")
+            latitude = "50.00"
+            longitude = "11.00"
+            return
+        }
+        #endif
+
+        isCityFocused = false // Remove keyboard
+
+        let cleaned = city.cleanedCityName()
+        city = cleaned // UI-Aktualisierung
+
+        guard !cleaned.isEmpty else {
+            showInvalidCoordinates = true
+            print("Input is empty")
+            return
+        }
+
+        let geocoder = CLGeocoder()
+        geocoder.geocodeAddressString(cleaned) { placemarks, error in
+            DispatchQueue.main.async {
+                if let location = placemarks?.first?.location {
+                    latitude = String(format: "%.4f", location.coordinate.latitude)
+                    longitude = String(format: "%.4f", location.coordinate.longitude)
+                    print("Coordinates for \(cleaned): lat = \(latitude), lon = \(longitude)")
+                } else if let error = error as? CLError {
+                    switch error.code {
+                    case .network:
+                        print("Network error")
+                    case .geocodeFoundNoResult:
+                        print("No city found: \(cleaned)")
+                    default:
+                        print("Geocoder error: \(error.localizedDescription)")
+                    }
+                    showInvalidCoordinates = true
+                } else {
+                    print("Geocoding failed")
+                    showInvalidCoordinates = true
+                }
+            }
+        }
+    }
 }
 
 #Preview {
-    let sample = BirthDate(city: "Berlin", latitude: 52.46, longitude: 13.42, date: .now, time: .now)
-    return BirthDateView(existingEntry: sample)
+    BirthDateView()
 }
 

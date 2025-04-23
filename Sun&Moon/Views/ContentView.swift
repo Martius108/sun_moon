@@ -21,7 +21,8 @@ struct ContentView: View {
     @EnvironmentObject var locationManager: LocationManager
     let weatherManager = WeatherManager.shared
     
-    // Set up and monitor all weather, location and timezone data
+    // Set up and monitor all network, weather, location and timezone data
+    @StateObject private var networkMonitor = NetworkMonitor()
     @State private var currentWeather: CurrentWeather?
     @State private var dailyForecast: Forecast<DayWeather>?
     @State private var timezone: TimeZone = .current
@@ -55,7 +56,7 @@ struct ContentView: View {
                         .padding(.top, 3)
                 }
                 HStack { // Header date + time
-                    Text("\(currentWeather?.date.getDayMonth().weekday ?? NSLocalizedString("Unknown Weekday", comment: "")),")
+                    Text("\(currentWeather?.date.getDayMonth().weekday ?? NSLocalizedString("Unknown Date", comment: "")),")
                         .textStyle1()
                     if let currentWeather = currentWeather {
                         Text("\(currentWeather.date.localDate(for: timezone))")
@@ -118,26 +119,23 @@ struct ContentView: View {
                     
                     HStack {
                         if let birthDate = birthDates.first {
-                            HStack {
-                                YourSignDataView(birthDate: birthDate)
-                                Text("")
-                                Button {
-                                    showEditView = true
-                                } label: {
-                                    Image(systemName: "square.and.pencil")
-                                        .font(.system(size: 23))
-                                        .padding(.bottom, 5)
-                                }
+                            YourSignDataView(birthDate: birthDate)
+                            Text("")
+                            Button {
+                                showEditView = true
+                            } label: {
+                                Image(systemName: "square.and.pencil")
+                                    .font(.system(size: 26))
+                                    .padding(.bottom, 7)
                             }
                         } else {
                             Text("Get your Zodiac Sign: ")
                                 .font(.system(size: 17))
-                                .padding(.bottom, 3)
                             Button {
                                 showEditView = true
                             } label: {
                                 Image(systemName: "pencil.line")
-                                    .font(.system(size: 27))
+                                    .font(.system(size: 30))
                             }
                         }
                     }
@@ -156,7 +154,7 @@ struct ContentView: View {
                 Spacer()
                 // attributionView stack
                 HStack {
-                    AttributionView()
+                    AttributionView(networkMonitor: networkMonitor)
                         .font(.system(size: 13))
                         .frame(width: 140, alignment: .center)
                 }
@@ -175,6 +173,17 @@ struct ContentView: View {
                 print("Location updated, fetching weather for \(location)")
                 await fetchWeather(for: location)
             }
+            .task(id: networkMonitor.isConnected) {
+                guard networkMonitor.isConnected else { return }
+                
+                if let location = locationManager.userLocation {
+                    await fetchWeather(for: location)
+                } else {
+                    print("No location available")
+                }
+            }
+
+
         }
         .preferredColorScheme(.dark)
     }
