@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "33F8D16A-A213-4076-A4EB-99511B5AB5F0.png",
+      "filename" : "AppIconSunMoon.png",
       "idiom" : "universal",
       "platform" : "ios",
       "size" : "1024x1024"
@@ -25,7 +25,7 @@
           "value" : "tinted"
         }
       ],
-      "filename" : "33F8D16A-A213-4076-A4EB-99511B5AB5F0 1.png",
+      "filename" : "AppIconSunMoon 1.png",
       "idiom" : "universal",
       "platform" : "ios",
       "size" : "1024x1024"

@@ -173,13 +173,19 @@ struct ContentView: View {
                 print("Location updated, fetching weather for \(location)")
                 await fetchWeather(for: location)
             }
-            .task(id: networkMonitor.isConnected) {
-                guard networkMonitor.isConnected else { return }
-                
-                if let location = locationManager.userLocation {
-                    await fetchWeather(for: location)
-                } else {
-                    print("No location available")
+            .task {
+                if !networkMonitor.isConnected {
+                    print("Device is offline at launch — waiting for reconnection...")
+                    // Wait for network to reconnect before proceeding
+                    Task {
+                        while !networkMonitor.isConnected {
+                            try? await Task.sleep(nanoseconds: 1_000_000_000) // wait 1 second
+                        }
+                        print("Network reconnected — fetching weather.")
+                        if let location = locationManager.userLocation {
+                            await fetchWeather(for: location)
+                        }
+                    }
                 }
             }
 
