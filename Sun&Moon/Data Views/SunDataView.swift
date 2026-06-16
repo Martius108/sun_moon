@@ -30,8 +30,11 @@ struct SunDataView: View {
         }
         Image(systemName: "sun.max.fill")
             .foregroundStyle(.orange)
-        Text(solarNoon.localTime(for: timezone))
+        HStack {
+            Text( NSLocalizedString("Solar Noon: ", comment: ""))
+            Text(solarNoon.localTime(for: timezone))
             .padding(.bottom, 1)
+        }
     }
 }
 

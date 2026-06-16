@@ -302,4 +302,3 @@ struct BirthDateView: View {
 #Preview {
     BirthDateView()
 }
-

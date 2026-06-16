@@ -10,15 +10,31 @@
 		CCBA9C3C2D97D5FA00C60F94 /* WeatherKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCBA9C3A2D97D5F600C60F94 /* WeatherKit.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		CCE1000B2DEF000000000001 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CCC79A482D8719C500F9C828 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CCC79A4F2D8719C500F9C828;
+			remoteInfo = "Sun&Moon";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		CCBA9C3A2D97D5F600C60F94 /* WeatherKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WeatherKit.framework; path = System/Library/Frameworks/WeatherKit.framework; sourceTree = SDKROOT; };
 		CCC79A502D8719C500F9C828 /* Sun&Moon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sun&Moon.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CCE100022DEF000000000001 /* Sun&MoonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Sun&MoonTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		CCC79A522D8719C500F9C828 /* Sun&Moon */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = "Sun&Moon";
+			sourceTree = "<group>";
+		};
+		CCE100012DEF000000000001 /* Sun&MoonTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Sun&MoonTests";
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -29,6 +45,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				CCBA9C3C2D97D5FA00C60F94 /* WeatherKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CCE100052DEF000000000001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -47,6 +70,7 @@
 			isa = PBXGroup;
 			children = (
 				CCC79A522D8719C500F9C828 /* Sun&Moon */,
+				CCE100012DEF000000000001 /* Sun&MoonTests */,
 				CC2A99912D8D7CF500C0C07A /* Frameworks */,
 				CCC79A512D8719C500F9C828 /* Products */,
 			);
@@ -56,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				CCC79A502D8719C500F9C828 /* Sun&Moon.app */,
+				CCE100022DEF000000000001 /* Sun&MoonTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -85,6 +110,29 @@
 			productReference = CCC79A502D8719C500F9C828 /* Sun&Moon.app */;
 			productType = "com.apple.product-type.application";
 		};
+		CCE100032DEF000000000001 /* Sun&MoonTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CCE100082DEF000000000001 /* Build configuration list for PBXNativeTarget "Sun&MoonTests" */;
+			buildPhases = (
+				CCE100042DEF000000000001 /* Sources */,
+				CCE100052DEF000000000001 /* Frameworks */,
+				CCE100062DEF000000000001 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CCE1000C2DEF000000000001 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				CCE100012DEF000000000001 /* Sun&MoonTests */,
+			);
+			name = "Sun&MoonTests";
+			packageProductDependencies = (
+			);
+			productName = "Sun&MoonTests";
+			productReference = CCE100022DEF000000000001 /* Sun&MoonTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -97,6 +145,10 @@
 				TargetAttributes = {
 					CCC79A4F2D8719C500F9C828 = {
 						CreatedOnToolsVersion = 16.2;
+					};
+					CCE100032DEF000000000001 = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = CCC79A4F2D8719C500F9C828;
 					};
 				};
 			};
@@ -118,12 +170,20 @@
 			projectRoot = "";
 			targets = (
 				CCC79A4F2D8719C500F9C828 /* Sun&Moon */,
+				CCE100032DEF000000000001 /* Sun&MoonTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		CCC79A4E2D8719C500F9C828 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CCE100062DEF000000000001 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -140,7 +200,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CCE100042DEF000000000001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CCE1000C2DEF000000000001 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CCC79A4F2D8719C500F9C828 /* Sun&Moon */;
+			targetProxy = CCE1000B2DEF000000000001 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		CCC79A5C2D8719C500F9C828 /* Debug */ = {
@@ -197,7 +272,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -257,7 +332,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -280,13 +355,13 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "Sun & Moon";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Sun & Moon uses your location to show local sunrise, sunset, moon, weather, and time zone information.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -316,13 +391,13 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "Sun & Moon";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Sun & Moon uses your location to show local sunrise, sunset, moon, weather, and time zone information.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -337,6 +412,56 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		CCE100092DEF000000000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FTB9X87833;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.martinlanius.Sun-MoonTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Sun&Moon.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Sun&Moon";
+			};
+			name = Debug;
+		};
+		CCE1000A2DEF000000000001 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FTB9X87833;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.martinlanius.Sun-MoonTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Sun&Moon.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Sun&Moon";
 			};
 			name = Release;
 		};
@@ -357,6 +482,15 @@
 			buildConfigurations = (
 				CCC79A5F2D8719C500F9C828 /* Debug */,
 				CCC79A602D8719C500F9C828 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CCE100082DEF000000000001 /* Build configuration list for PBXNativeTarget "Sun&MoonTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CCE100092DEF000000000001 /* Debug */,
+				CCE1000A2DEF000000000001 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
