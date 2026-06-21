@@ -15,10 +15,15 @@ struct Sun_MoonApp: App {
     
     var body: some Scene {
         WindowGroup {
-            if locationManager.isAuthorized {
-                ContentView()
-            } else {
-                LocationDeniedView()
+            Group {
+                if locationManager.isAuthorized {
+                    ContentView()
+                } else {
+                    LocationDeniedView()
+                }
+            }
+            .onAppear {
+                locationManager.startLocationServices()
             }
         }
         .modelContainer(for: BirthDate.self) // prepare for SwiftData
