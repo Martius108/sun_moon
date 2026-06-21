@@ -36,6 +36,6 @@ Weather requests are handled through Apple WeatherKit as described above.
 
 For privacy questions, contact:
 
-martin@example.com
+martin.lanius@icloud.com
 
 Please replace this email address with the correct support or privacy contact before submitting the app to the App Store.
