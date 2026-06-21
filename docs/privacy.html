@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="en">
+<html lang="de">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Privacy Policy for Sun &amp; Moon</title>
+  <title>Sun &amp; Moon Privacy / Datenschutz</title>
   <style>
     :root {
       color-scheme: light dark;
@@ -12,6 +12,7 @@
       --muted: #5d666b;
       --link: #2457a7;
       --rule: #d8d8d2;
+      --card: rgba(255, 255, 255, 0.65);
     }
 
     @media (prefers-color-scheme: dark) {
@@ -21,6 +22,7 @@
         --muted: #b7bcbf;
         --link: #8db5ff;
         --rule: #34383b;
+        --card: rgba(255, 255, 255, 0.06);
       }
     }
 
@@ -44,59 +46,41 @@
       line-height: 1.2;
     }
 
-    h2 {
-      margin: 32px 0 8px;
-      font-size: 1.2rem;
-    }
-
     p {
       margin: 0 0 16px;
+      color: var(--muted);
     }
 
-    .updated {
-      color: var(--muted);
-      border-bottom: 1px solid var(--rule);
-      padding-bottom: 24px;
-      margin-bottom: 28px;
+    .links {
+      display: grid;
+      gap: 12px;
+      margin-top: 28px;
     }
 
     a {
       color: var(--link);
     }
+
+    .button {
+      display: block;
+      padding: 16px 18px;
+      border: 1px solid var(--rule);
+      border-radius: 10px;
+      background: var(--card);
+      text-decoration: none;
+      font-weight: 600;
+    }
   </style>
 </head>
 <body>
   <main>
-    <h1>Privacy Policy for Sun &amp; Moon</h1>
-    <p class="updated">Last updated: June 13, 2026</p>
+    <h1>Sun &amp; Moon Privacy / Datenschutz</h1>
+    <p>Please choose your language. Bitte wählen Sie Ihre Sprache.</p>
 
-    <p>Sun &amp; Moon is an iOS app by Martin Lanius. This privacy policy explains what information the app uses and why.</p>
-
-    <h2>Information Used by the App</h2>
-    <p>Sun &amp; Moon may use your current location to show local weather, sunrise, sunset, moon, and time zone information.</p>
-    <p>The app may also store birth date, birth time, city, latitude, and longitude information locally on your device. This information is used to calculate zodiac and ascendant information inside the app.</p>
-
-    <h2>Weather Data</h2>
-    <p>Weather information is provided through Apple WeatherKit. When the app requests weather data, location information may be sent to Apple so WeatherKit can return weather, sun, and moon related data for that location.</p>
-
-    <h2>Geocoding</h2>
-    <p>When you use the "Get Coordinates" feature, the city name you enter may be sent to Apple's geocoding service so the app can determine latitude and longitude for that city.</p>
-
-    <h2>Data Storage</h2>
-    <p>Birth data and saved location information are stored locally on your device. Sun &amp; Moon does not operate its own server for this data.</p>
-
-    <h2>Tracking and Advertising</h2>
-    <p>Sun &amp; Moon does not use third-party advertising SDKs.</p>
-    <p>Sun &amp; Moon does not track you across apps or websites owned by other companies.</p>
-    <p>Sun &amp; Moon does not sell your personal data.</p>
-
-    <h2>Data Sharing</h2>
-    <p>Sun &amp; Moon does not share your locally saved birth data with data brokers or advertising networks.</p>
-    <p>Weather requests are handled through Apple WeatherKit as described above.</p>
-    <p>City lookup requests are handled through Apple's geocoding service as described above.</p>
-
-    <h2>Contact</h2>
-    <p>For privacy questions, contact: <a href="mailto:martin.lanius@icloud.com">martin.lanius@icloud.com</a></p>
+    <div class="links">
+      <a class="button" href="privacy-de.html">Deutsch: Datenschutzerklärung</a>
+      <a class="button" href="privacy-en.html">English: Privacy Policy</a>
+    </div>
   </main>
 </body>
 </html>
