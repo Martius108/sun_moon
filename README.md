@@ -26,12 +26,6 @@ The privacy policy is available in English and German:
 - [Datenschutzerklärung Deutsch](docs/privacy-de.md)
 - [HTML language selection](docs/privacy.html)
 
-For App Store Connect, use the public HTML page, for example via GitHub Pages:
-
-```text
-https://martius108.github.io/sun_moon/docs/privacy.html
-```
-
 ### Notes
 
 Sun & Moon stores birth data locally on the device. Weather data is loaded through Apple WeatherKit. When users use the "Get Coordinates" feature, the entered city name may be sent to Apple's geocoding service to determine coordinates.
@@ -63,12 +57,6 @@ Die Datenschutzerklärung ist auf Deutsch und Englisch verfügbar:
 - [Datenschutzerklärung Deutsch](docs/privacy-de.md)
 - [Privacy Policy English](docs/privacy-en.md)
 - [HTML-Sprachauswahl](docs/privacy.html)
-
-Für App Store Connect sollte die öffentliche HTML-Seite verwendet werden, zum Beispiel über GitHub Pages:
-
-```text
-https://martius108.github.io/sun_moon/docs/privacy.html
-```
 
 ### Hinweise
 
