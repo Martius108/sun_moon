@@ -24,7 +24,6 @@ The privacy policy is available in English and German:
 
 - [Privacy Policy English](docs/privacy-en.md)
 - [Datenschutzerklärung Deutsch](docs/privacy-de.md)
-- [HTML language selection](docs/privacy.html)
 
 ### Notes
 
@@ -56,7 +55,6 @@ Die Datenschutzerklärung ist auf Deutsch und Englisch verfügbar:
 
 - [Datenschutzerklärung Deutsch](docs/privacy-de.md)
 - [Privacy Policy English](docs/privacy-en.md)
-- [HTML-Sprachauswahl](docs/privacy.html)
 
 ### Hinweise
 
