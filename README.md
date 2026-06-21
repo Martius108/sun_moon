@@ -73,7 +73,3 @@ https://martius108.github.io/sun_moon/docs/privacy.html
 ### Hinweise
 
 Sun & Moon speichert Geburtsdaten lokal auf dem Gerät. Wetterdaten werden über Apple WeatherKit geladen. Wenn der Nutzer die Funktion "Get Coordinates" verwendet, kann der eingegebene Ortsname an Apples Geocoding-Dienst gesendet werden, um Koordinaten zu bestimmen.
-
-## Repository
-
-- [Martius108/sun_moon](https://github.com/Martius108/sun_moon)
