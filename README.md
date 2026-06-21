@@ -2,7 +2,7 @@
 
 Sun & Moon is an iOS app that displays local time, weather, sun and moon data, the current zodiac sign, and ascendant information.
 
-You can enter yout birth data and the App will show your zodiac sign information together with the current information.
+You can enter yout birth data and the app will show your zodiac sign information together with the current information.
 
 ## Privacy
 
