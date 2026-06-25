@@ -25,6 +25,10 @@ The privacy policy is available in English and German:
 - [Privacy Policy English](docs/privacy-en.md)
 - [Datenschutzerklärung Deutsch](docs/privacy-de.md)
 
+### Support
+
+- [Support page](docs/support.html)
+
 ### Notes
 
 Sun & Moon stores birth data locally on the device. Weather data is loaded through Apple WeatherKit. When users use the "Get Coordinates" feature, the entered city name may be sent to Apple's geocoding service to determine coordinates.
@@ -55,6 +59,10 @@ Die Datenschutzerklärung ist auf Deutsch und Englisch verfügbar:
 
 - [Datenschutzerklärung Deutsch](docs/privacy-de.md)
 - [Privacy Policy English](docs/privacy-en.md)
+
+### Support
+
+- [Support-Seite](docs/support.html)
 
 ### Hinweise
 

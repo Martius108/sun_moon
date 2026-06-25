@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="de">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Sun &amp; Moon Privacy / Datenschutz</title>
+  <title>Sun &amp; Moon Support</title>
   <style>
     :root {
       color-scheme: light dark;
@@ -46,15 +46,27 @@
       line-height: 1.2;
     }
 
+    h2 {
+      margin: 32px 0 8px;
+      font-size: 1.2rem;
+    }
+
     p {
       margin: 0 0 16px;
       color: var(--muted);
     }
 
+    .updated {
+      color: var(--muted);
+      border-bottom: 1px solid var(--rule);
+      padding-bottom: 24px;
+      margin-bottom: 28px;
+    }
+
     .links {
       display: grid;
       gap: 12px;
-      margin-top: 28px;
+      margin: 28px 0 34px;
     }
 
     a {
@@ -74,25 +86,29 @@
 </head>
 <body>
   <main>
-    <h1>Sun &amp; Moon Privacy / Datenschutz</h1>
-    <p>Please choose your language. Bitte wählen Sie Ihre Sprache.</p>
+    <h1>Sun &amp; Moon Support</h1>
+    <p class="updated">Last updated: June 25, 2026</p>
 
+    <p>If you need help, found a bug, or want to request a feature, contact the developer directly:</p>
     <div class="links">
-      <a class="button" href="privacy-de.html">Deutsch: Datenschutzerklärung</a>
-      <a class="button" href="privacy-en.html">English: Privacy Policy</a>
+      <a class="button" href="mailto:martin.lanius@icloud.com">Email support</a>
+      <a class="button" href="privacy.html">Privacy Policy</a>
+      <a class="button" href="privacy-en.html">English Privacy Policy</a>
+      <a class="button" href="privacy-de.html">German Privacy Policy</a>
     </div>
 
-    <section style="margin-top: 36px; padding-top: 20px; border-top: 1px solid var(--rule);">
-      <h2 style="margin: 0 0 10px; font-size: 1.2rem;">Support</h2>
-      <p style="margin-bottom: 10px;">
-        If you have questions, run into a bug, or need help with Sun &amp; Moon, use the
-        <a href="support.html">support page</a> or contact the developer at
-        <a href="mailto:martin.lanius@icloud.com">martin.lanius@icloud.com</a>.
-      </p>
-      <p>
-        This app stores birth data locally on your device and uses Apple WeatherKit and Apple geocoding for weather and location-related features.
-      </p>
-    </section>
+    <h2>Common questions</h2>
+    <p><strong>Why does the app ask for location?</strong><br>
+    Sun &amp; Moon uses location to show local weather, sunrise, sunset, moon, and time zone data.</p>
+
+    <p><strong>Can I use the app without location access?</strong><br>
+    Yes. The app should remain usable with a fallback location if you do not grant access.</p>
+
+    <p><strong>Where is my data stored?</strong><br>
+    Birth data and saved location data are stored locally on your device.</p>
+
+    <p><strong>What if weather data is unavailable?</strong><br>
+    Weather data depends on Apple WeatherKit and network availability.</p>
   </main>
 </body>
 </html>

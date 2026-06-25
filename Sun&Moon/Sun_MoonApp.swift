@@ -15,13 +15,7 @@ struct Sun_MoonApp: App {
     
     var body: some Scene {
         WindowGroup {
-            Group {
-                if locationManager.isAuthorized {
-                    ContentView()
-                } else {
-                    LocationDeniedView()
-                }
-            }
+            ContentView()
             .onAppear {
                 locationManager.startLocationServices()
             }

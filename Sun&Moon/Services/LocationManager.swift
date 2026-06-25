@@ -16,6 +16,7 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     @Published var userLocation: CLLocation? // optional cllocation value
     @Published var name: String? // optional city name
     @Published var isAuthorized = false // check for user authorization
+    @Published var authorizationStatus: CLAuthorizationStatus = .notDetermined
     
     // Override initializer to store the delegate values
     override init() {
@@ -25,7 +26,8 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     
     // Create  a function to check the authorization status and to allow to update location
     func startLocationServices() {
-        switch manager.authorizationStatus {
+        authorizationStatus = manager.authorizationStatus
+        switch authorizationStatus {
         case .authorizedAlways, .authorizedWhenInUse:
             isAuthorized = true
             manager.requestLocation()
@@ -52,11 +54,20 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
         let timezone = try? await CLGeocoder().reverseGeocodeLocation(location).first?.timeZone
         return timezone ?? .current
     }
+
+    // Geocode a city name into coordinates for the manual fallback flow.
+    func geocodeLocation(for city: String) async -> CLLocation? {
+        let cleaned = city.cleanedCityName()
+        guard !cleaned.isEmpty else { return nil }
+
+        let placemarks = try? await CLGeocoder().geocodeAddressString(cleaned)
+        return placemarks?.first?.location
+    }
     
     // Function to handle all authorization cases
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
-        
-        switch manager.authorizationStatus {
+        authorizationStatus = manager.authorizationStatus
+        switch authorizationStatus {
             
         case .authorizedAlways, .authorizedWhenInUse:
             isAuthorized = true
@@ -68,6 +79,7 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
             
         case .denied:
             isAuthorized = false
+            userLocation = nil
             
         default :
             startLocationServices()

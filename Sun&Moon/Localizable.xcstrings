@@ -429,6 +429,9 @@
         }
       }
     },
+    "City Not Found" : {
+
+    },
     "Current Zodiac Sign" : {
       "localizations" : {
         "de" : {
@@ -509,6 +512,12 @@
           }
         }
       }
+    },
+    "Enter a city to load weather, sun, moon, and zodiac data without location access." : {
+
+    },
+    "Enter City" : {
+
     },
     "Enter your birth data:" : {
       "extractionState" : "manual",
@@ -835,6 +844,9 @@
           }
         }
       }
+    },
+    "Location Access Denied" : {
+
     },
     "LocationServices" : {
       "localizations" : {
@@ -1280,6 +1292,9 @@
         }
       }
     },
+    "Please enter a valid city name." : {
+
+    },
     "Please enter correct values with a dot separator" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1624,6 +1639,9 @@
           }
         }
       }
+    },
+    "Use City" : {
+
     },
     "Virgo" : {
       "localizations" : {
