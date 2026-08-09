@@ -25,7 +25,7 @@ struct LocationDeniedView: View {
                     Text("3. Locate this APP and open it")
                     Text("4. Change the setting to \"Allow while using the APP\"")
                 }
-                .frame(maxWidth: .infinity, alignment: .leading) // Alles linksbündig ausrichten
+                .frame(maxWidth: .infinity, alignment: .leading) // Align all content to the leading edge
             },
             actions: {
                 // Button which leads to location settings
@@ -47,4 +47,3 @@ struct LocationDeniedView: View {
 #Preview {
     LocationDeniedView()
 }
-

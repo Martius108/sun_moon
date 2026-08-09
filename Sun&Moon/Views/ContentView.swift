@@ -99,7 +99,7 @@ struct ContentView: View {
                     VStack {
                         Text("Moon")
                             .headerStyle()
-                        if let moonrise = moonrise, let moonset = moonset, let currentMoonPhase = currentMoonPhase,
+                        if let currentMoonPhase = currentMoonPhase,
                            let moonPhaseEnum = MoonPhase(rawValue: currentMoonPhase) {
                             MoonDataView(timezone: timezone, moonrise: moonrise, moonset: moonset)
 

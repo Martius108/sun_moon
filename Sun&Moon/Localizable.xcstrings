@@ -269,14 +269,14 @@
       "localizations" : {
         "de" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "Geburtstag"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Birth Date"
+            "value" : "Birth date"
           }
         }
       }
@@ -285,14 +285,14 @@
       "localizations" : {
         "de" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "Geburtszeit"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Birth Time"
+            "value" : "Birth time"
           }
         }
       }
@@ -384,14 +384,14 @@
       "localizations" : {
         "de" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "Chinesisches Sternzeichen"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Chinese Zodiac Sign"
+            "value" : "Chinese zodiac sign"
           }
         }
       }
@@ -401,14 +401,14 @@
       "localizations" : {
         "de" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "Chinesisches Sternzeichen:"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Chinese Zodiac Sign:"
+            "value" : "Chinese zodiac sign:"
           }
         }
       }
@@ -430,20 +430,33 @@
       }
     },
     "City Not Found" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stadt nicht gefunden"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "City not found"
+          }
+        }
+      }
     },
     "Current Zodiac Sign" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "Aktuelles Sternzeichen"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Current Zodiac Sign"
+            "value" : "Current zodiac sign"
           }
         }
       }
@@ -514,10 +527,36 @@
       }
     },
     "Enter a city to load weather, sun, moon, and zodiac data without location access." : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gib eine Stadt ein, um Wetter, Sonnen- und Monddaten, sowie Sternzeichen und Aszendent angezeigt zu bekommen."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enter a city to load weather, sun, moon, and zodiac data without location access."
+          }
+        }
+      }
     },
     "Enter City" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gib eine Stadt ein"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enter city"
+          }
+        }
+      }
     },
     "Enter your birth data:" : {
       "extractionState" : "manual",
@@ -579,7 +618,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Fetching Weather data …"
+            "value" : "Fetching weather data …"
           }
         }
       }
@@ -662,7 +701,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Get your Zodiac Sign:"
+            "value" : "Get your zodiac sign:"
           }
         }
       }
@@ -678,7 +717,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Get your Zodiac Sign:"
+            "value" : "Get your zodiac sign:"
           }
         }
       }
@@ -719,14 +758,14 @@
       "localizations" : {
         "de" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "Ungültige Stadt oder Koordinaten"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Invalid City or Coordinates"
+            "value" : "Invalid city or coordinates"
           }
         }
       }
@@ -846,7 +885,20 @@
       }
     },
     "Location Access Denied" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Standort Zugriff verweigert "
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Location access denied"
+          }
+        }
+      }
     },
     "LocationServices" : {
       "localizations" : {
@@ -1146,6 +1198,38 @@
         }
       }
     },
+    "Moonrise is not expected today at this location." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Heute ist an diesem Ort kein Mondaufgang zu erwarten."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Moonrise is not expected today at this location."
+          }
+        }
+      }
+    },
+    "Moonset is not expected today at this location." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Heute ist an diesem Ort kein Monduntergang zu erwarten."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Moonset is not expected today at this location."
+          }
+        }
+      }
+    },
     "No new year date found" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1293,7 +1377,20 @@
       }
     },
     "Please enter a valid city name." : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bitte einen gültigen Städtenamen eingeben"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Please enter a valid city name"
+          }
+        }
+      }
     },
     "Please enter correct values with a dot separator" : {
       "extractionState" : "manual",
@@ -1628,20 +1725,33 @@
       "localizations" : {
         "de" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "Unbekanntes Datum"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Unknown Date"
+            "value" : "Unknown date"
           }
         }
       }
     },
     "Use City" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Benutze Stadt"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Use city"
+          }
+        }
+      }
     },
     "Virgo" : {
       "localizations" : {

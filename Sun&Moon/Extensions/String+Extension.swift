@@ -17,13 +17,13 @@ extension String {
         // 1. Trim outer 
         var result = self.trimmed()
         
-        // 2. Entferne überflüssige Leerzeichen um Bindestriche
+        // 2. Remove unnecessary whitespace around hyphens
         result = result.replacingOccurrences(of: "\\s*-\\s*", with: "-", options: .regularExpression)
         
         // 3. Ersetze mehrere Leerzeichen durch genau eines
         result = result.replacingOccurrences(of: "\\s+", with: " ", options: .regularExpression)
         
-        // 4. Teile anhand von Leerzeichen oder Bindestrichen und formatiere jedes Wort
+        // 4. Split on spaces or hyphens and format each word
         let separators = CharacterSet(charactersIn: " -")
         let components = result.components(separatedBy: separators)
         
@@ -32,7 +32,7 @@ extension String {
             return first.uppercased() + word.dropFirst().lowercased()
         }
         
-        // 5. Baue den ursprünglichen String wieder mit korrekt formatierten Trennzeichen zusammen
+        // 5. Rebuild the original string with correctly formatted separators
         var formatted = ""
         var index = result.startIndex
         var componentIndex = 0
@@ -46,12 +46,12 @@ extension String {
             } else if componentIndex < capitalizedComponents.count {
                 formatted.append(capitalizedComponents[componentIndex])
                 
-                // Finde die Range des aktuellen Wortes im Originalstring
+                // Find the current word's range in the original string
                 let word = components[componentIndex]
                 if let wordRange = result.range(of: word, range: index..<result.endIndex) {
                     index = wordRange.upperBound
                 } else {
-                    // Falls das Wort nicht gefunden wird, gehe vorsichtshalber ein Zeichen weiter
+                    // Advance one character if the word cannot be found
                     index = result.index(after: index)
                 }
                 
@@ -64,6 +64,5 @@ extension String {
         return formatted
     }
 }
-
 
 

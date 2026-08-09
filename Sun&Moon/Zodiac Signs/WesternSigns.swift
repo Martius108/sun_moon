@@ -83,7 +83,7 @@ class WesternSigns {
             element = NSLocalizedString("Water", comment: "")
             symbol = "♋︎"
         }
-        if (month == 7 && day >= 23) { // Löwe 23.7.-23.8.
+        if (month == 7 && day >= 23) { // Leo: July 23 - August 23
             name = NSLocalizedString("Leo", comment: "")
             element = NSLocalizedString("Fire", comment: "")
             symbol = "♌︎"
@@ -123,7 +123,7 @@ class WesternSigns {
             element = NSLocalizedString("Water", comment: "")
             symbol = "♏︎"
         }
-        if (month == 11 && day >= 23) { // Schütze 23.11.-21.12.
+        if (month == 11 && day >= 23) { // Sagittarius: November 23 - December 21
             name = NSLocalizedString("Sagittarius", comment: "")
             element = NSLocalizedString("Fire", comment: "")
             symbol = "♐︎"

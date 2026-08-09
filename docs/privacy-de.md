@@ -20,7 +20,7 @@ Wenn Sie die Funktion "Get Coordinates" verwenden, kann der eingegebene Ortsname
 
 ## Datenspeicherung
 
-Geburtsdaten und gespeicherte Standortinformationen werden lokal auf Ihrem Gerät gespeichert. Sun & Moon betreibt keinen eigenen Server für diese Daten.
+Geburtsdaten und gespeicherte Standortinformationen werden lokal mit SwiftData auf Ihrem Gerät gespeichert. Sun & Moon synchronisiert diese Daten nicht über CloudKit und betreibt keinen eigenen Server dafür.
 
 ## Tracking und Werbung
 

@@ -20,7 +20,7 @@ When you use the "Get Coordinates" feature, the city name you enter may be sent 
 
 ## Data Storage
 
-Birth data and saved location information are stored locally on your device. Sun & Moon does not operate its own server for this data.
+Birth data and saved location information are stored locally on your device with SwiftData. Sun & Moon does not synchronize this data through CloudKit and does not operate its own server for it.
 
 ## Tracking and Advertising
 

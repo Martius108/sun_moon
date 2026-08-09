@@ -73,7 +73,7 @@ struct AscendantSign {
     
     // LST calculation
     func localSiderealTime(gmst: Double, longitude: Double) -> Double {
-        // GMST ist in Grad (0 - 360), wir müssen diese umrechnen, um LST zu erhalten.
+        // Convert GMST from degrees (0 - 360) to obtain LST.
         var LST = gmst + longitude
         if LST < 0 { LST += 360.0 }
         if LST >= 360.0 { LST -= 360.0 }
